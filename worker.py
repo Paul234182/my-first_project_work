@@ -148,6 +148,144 @@ print(electriccar2.repair_cars())
 gaspoweredcars5.repair_cars()
 print(gaspoweredcars5.repair_cars())
 
+# object orientated programming
+
+class dog:
+    def bark(self):
+        print("bark")
+    def add_value(self, x):
+        return x +1
+
+     
+# it is an instant of the class dog          
+d= dog()
+print(type(d))
+d.bark()
+print(d.bark())
+d.add_value(6)
+print(d.add_value(6))
+
+class dog2:
+    def __init__(self, name, age):
+        self.name= name
+        self.age= age
+    def get_name(self):
+        return self.name
+    def get_age(self):
+        return self.age
+    def set_age(self, age):
+        self.age= age
+    def set_name(self, name):
+        self.name = name
+       
+d1= dog2("billie", 25)
+d1.set_age(20)
+print(d1.set_age(20))
+print(d1.get_age())
+d2= dog2("tom", 35)
+d2.set_name('Chika')
+print(d2.set_name('Chika'))
+print(d2. get_age())
+
+class student:
+    def __init__(self, name, age, grade):
+        self.name= name
+        self.age= age
+        self.grade= grade
+    def get_grade(self):
+        return self.grade
+
+class course:
+    def __init__(self, name, max_students):
+        self.name= name
+        self.max_students= max_students
+        self.students= []
+    def add_students(self, student):
+        if len(self.students) < self.max_students:
+            self.students.append(student)
+            return True
+        return False
+    def get_average_grade(self):
+        value= 0
+        for student in self.students:
+            value += student.get_grade()
+        return value/ len(self.students)
+    
+        
+        
+
+s1= student('Chika', 35, 60)
+s2= student('Peter', 27, 58)
+s3= student('Paul', 36, 98)
+
+
+# adding students records in the course
+courses= course('Art', 2)
+courses.add_students(s1)
+courses.add_students(s2)
+courses.add_students(s3)
+print(courses.students[0].name)
+print(courses.get_average_grade())
+print(courses.add_students(s3))
+
+# inheritance
+class pet:
+    def __init__(self, name, age):
+        self.name = name
+        self.age= age
+    def display(self):
+        print(f"i am {self.name} and i am {self.age} years old")
+    def speak(self):
+        print("i don't have what to say")
+        
+
+class cat(pet):
+    def __init__(self, name, age):
+        self.name = name
+        self.age= age
+    def speak(self):
+        print("meow")
+class dog(pet):
+    def __init__(self, name, age):
+        self.name= name
+        self.age= age
+    def speak(self):
+        print("bark")
+
+p1= pet('Chika', 20)
+p2= pet('Tommy', 17)
+p3= pet('Frank', 26)
+
+p1.display()
+print(p1.display())
+p1.speak()
+print(p1.speak())
+
+c1= cat('sammy', 15)
+c1.display()
+c1.speak()
+print(c1.speak())
+
+print(c1.display())
+d1= dog('chilly', 29)
+d1.speak()
+print(d1.speak())
+d1.display()
+print(d1.display())
+
+
+
+    
+
+
+
+
+    
+
+    
+
+
+        
 
 
 
